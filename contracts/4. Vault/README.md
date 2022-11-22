@@ -7,3 +7,4 @@
 - First, understand how ETH stores all state, even state declared as private
 - Second, find a way to access the private variable "password" using the ethers.js library
 - Finally, use the password to unlock the vault!
+npx hardhat test "contracts/4. Vault/Vault.test.ts"
