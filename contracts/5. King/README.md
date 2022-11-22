@@ -11,3 +11,4 @@
 - Understanding how fallback functions work in solidity will also help you complete this challenge
 - Understanding revert, assert, and require will also help you complete this challenge
 
+npx hardhat test "contracts/5. King/King.test.ts"

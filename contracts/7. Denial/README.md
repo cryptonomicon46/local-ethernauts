@@ -7,3 +7,4 @@
 
 - Understanding how the low level call function works in solidity will help complete this challenge
 - Can you find a way to deplete the gas called with the withdrawl function?
+npx hardhat test "contracts/7. Denial/Denial.test.ts"

@@ -5,3 +5,4 @@
 # Hints
 
 - Understanding delegatecall will help you complete this challenge
+npx hardhat test "contracts/2. Delegation/Delegation.test.ts"
