@@ -28,3 +28,4 @@ contract King {
         return prize;
     }
 }
+1000000000000000000
